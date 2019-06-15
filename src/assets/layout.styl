@@ -1,0 +1,43 @@
+colorList = {
+  primary:#db9e3f
+  success:#28a745
+  danger:#dc3545
+  warn:#ffc107
+  info:#17a2b8
+  light:#f8f9fa
+  dark:#343a40
+  white:#fff
+  black:#000
+}
+
+for key, value in colorList
+  .text-{key}
+    color value
+  .bg-{key}
+    background: value
+  .border-{key}
+    border value
+
+
+$flex =@block {
+  display flex
+  justify-content center
+  align-items center
+}
+$grid =@block {
+  display grid
+  grid-template-columns repeat(auto-fit,minmax(100px,1fr))
+  place-items center
+  place-content center
+}
+//class
+
+.grid
+  {$grid}
+
+.flex
+  {$flex}
+
+.flex-1 {
+  flex: 1
+}

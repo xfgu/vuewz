@@ -1,3 +1,7 @@
-query HelloWorld ($name: String) {
-  hello (name: $name)
+query posts  {
+  posts {
+    id
+    name
+    description
+  }
 }

@@ -1,0 +1,5 @@
+query files {
+  files: uploads {
+    ...file
+  }
+}
