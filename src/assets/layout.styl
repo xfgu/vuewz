@@ -18,25 +18,61 @@ for key, value in colorList
   .border-{key}
     border value
 
-
 $flex =@block {
   display flex
   justify-content center
   align-items center
 }
+
 $grid =@block {
   display grid
   grid-template-columns repeat(auto-fit,minmax(100px,1fr))
   place-items center
   place-content center
 }
-//class
+fs = 8 10 12 13 15 16
+col = 20rem
+
+.col
+  font-size "calc(%s / 375)" % col
+
+.fs-8 {
+  font-size calc(8rem / 375)
+}
+
+.fs-10 {
+  font-size calc(10rem / 375)
+}
+
+.fs-15 {
+  font-size calc(15rem / 375)
+}
+
+.fs-12 {
+  font-size calc(12rem / 375)
+}
+
+.fs-13 {
+  font-size calc(13rem / 375)
+}
+
+.fs-16 {
+  font-size calc(16rem / 375)
+}
 
 .grid
   {$grid}
 
 .flex
   {$flex}
+
+.flex-column
+  flex-direction column
+  @extends .flex
+
+.flex-between
+  @extends  .flex
+  justify-content space-between
 
 .flex-1 {
   flex: 1

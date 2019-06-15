@@ -1,9 +1,8 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <ApolloExample />
-  </div>
+  <header class="bg-info">
+    <section class="col text-white">344</section>
+    <!--<ApolloExample />-->
+  </header>
 </template>
 
 <script>
@@ -19,3 +18,8 @@ export default {
   }
 }
 </script>
+<style lang="stylus">
+  @import "../assets/index.styl"
+  header
+    height calc(45rem/375)
+</style>
