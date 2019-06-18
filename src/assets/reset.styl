@@ -46,21 +46,32 @@ table {
   border-spacing: 0;
 }
 
+html {
+  scroll-behavior smooth
+}
+
 body {
   font-size 13px
   font-family "Microsoft YaHei UI"
+  background: #f1f1f1
+  position: relative
+  scroll-behavior smooth
 }
 
 * {
   box-sizing border-box
+  outline none
+  border none
 }
 
 img {
   object-fit contain
+  max-height: 100%
 }
 
 a {
   color: #999999
+  display inline-block
 }
 
 .w100 {

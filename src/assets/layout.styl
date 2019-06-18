@@ -6,8 +6,15 @@ colorList = {
   info:#17a2b8
   light:#f8f9fa
   dark:#343a40
+  c2:#222
+  gray:#666
+  c9:#999
+  c34:#343434
   white:#fff
   black:#000
+  f9:#f9f9f9
+  border:#d4d9de
+  c46:#464f73
 }
 
 for key, value in colorList
@@ -18,6 +25,21 @@ for key, value in colorList
   .border-{key}
     border value
 
+//字体大小
+fs = 8rem 10rem 12rem 13rem 15rem 16rem
+for val in fs
+  .fs-{val}
+    font-size "calc(%s / 375)" % val
+
+//函数
+m(val)
+  "calc(%s /375)" % val
+
+c(val)
+  val = unit(val, rem)
+  "calc(%s /375)" % val
+
+//代码片段
 $flex =@block {
   display flex
   justify-content center
@@ -27,38 +49,45 @@ $flex =@block {
 $grid =@block {
   display grid
   grid-template-columns repeat(auto-fit,minmax(100px,1fr))
-  place-items center
-  place-content center
 }
-fs = 8 10 12 13 15 16
-col = 20rem
-
-.col
-  font-size "calc(%s / 375)" % col
-
-.fs-8 {
-  font-size calc(8rem / 375)
+$card =@block {
+  background: colorList.white
+  border-bottom: 1px solid colorList.border
+  margin-bottom:  m(10rem)
 }
 
-.fs-10 {
-  font-size calc(10rem / 375)
-}
+//css类
+.px17
+  padding 0 m(17rem)
 
-.fs-15 {
-  font-size calc(15rem / 375)
-}
+.nav
+  display flex
+  justify-content space-between
+  align-items center
+  font-size m(13rem)
+  color: colorList.c34
+  padding-bottom 1px
+  border-bottom 1px solid transparent
+.active
+  color: colorList.primary
+  border-bottom 1px solid @color
 
-.fs-12 {
-  font-size calc(12rem / 375)
-}
+.nav-swap
+  color: colorList.white
+  justify-content space-around
+  @extends .nav
 
-.fs-13 {
-  font-size calc(13rem / 375)
-}
+.ell
+  text-overflow ellipsis
+  white-space nowrap
+  overflow: hidden
+  padding-right: m(2rem)
 
-.fs-16 {
-  font-size calc(16rem / 375)
-}
+.px
+  padding 0 calc(17rem / 375)
+
+.ml
+  margin-left auto
 
 .grid
   {$grid}
@@ -74,6 +103,11 @@ col = 20rem
   @extends  .flex
   justify-content space-between
 
-.flex-1 {
+.flex-1
   flex: 1
-}
+
+.card
+  {$card}
+
+
+
